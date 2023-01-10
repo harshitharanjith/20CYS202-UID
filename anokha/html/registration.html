@@ -1,0 +1,315 @@
+<html>
+<head>
+<title>Anokha Registration Form</title>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body {
+        font-family: Arial, Cursive, sans-serif;
+        margin: 0;
+        background-color:Orange;
+    }
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+    header {
+        padding: 10px;
+        text-align: center;
+        background: linear-gradient(45deg, #fcef04, #ec8235);
+        color: rgb(22, 20, 20);
+    }
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: white;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+    button {
+        color: white;
+        background: linear-gradient(45deg, #F53803, #F5D020);
+        position: relative;
+        top: 15px;
+        width: 115px;
+        height: 40px;
+        border-radius: 100px;
+    }
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+    .switch {
+        position: relative;
+        left: 210px;
+        top: 15px;
+        width: 85px;
+        height: 30px;
+        text-align: center;
+        margin: -30px 0 0 -75px;
+        background: #4CBB17;
+        transition: all 0.3s ease;
+        border-radius: 26px;
+    }
+
+
+    .radio1 {
+        display: none;
+    }
+
+    .switch label {
+        cursor: pointer;
+        color: rgba(0,0,0,0.2);
+        width: 60px;
+        line-height: 50px;
+        transition: all 0.2s ease;
+    }
+
+    label[for=yes] {
+        position: relative;
+        right: 8px;
+        bottom: 10px;
+    }
+
+    label[for=no] {
+        position: relative;
+        left: 8px;
+        bottom: 10px;
+
+
+    }
+
+    #no:checked ~ .switch {
+        background: #ba3723;
+    }
+
+        #no:checked ~ .switch span {
+            background: #fff;
+            margin-left: -8px;
+        }
+
+            #no:checked ~ .switch span:after {
+                background: #fff;
+                height: 20px;
+                margin-top: -8px;
+                margin-left: 8px;
+            }
+
+    #yes:checked ~ .switch label[for=yes] {
+        color: #fff;
+    }
+
+    #no:checked ~ .switch label[for=no] {
+        color: #fff;
+    }
+	
+	<body>
+    <script>  
+        function validateform(){  
+        var name=document.myform.name.value;  
+        var password=document.myform.password.value;
+        var password2 = document.myform.password2.value;  
+        var num = document.myform.phnumber.value;
+        var x=document.myform.email.value;  
+        var atposition=x.indexOf("@");  
+        var dotposition=x.lastIndexOf(".");  
+        
+        if (name==null || name==""){  
+          alert("Enter your Name!");  
+          return false;  
+        }else if(password.length<8){  
+          alert("Password must be at least 8 characters long.");  
+          return false;  
+          }
+          else if(password!=password2){
+            alert("Passwords do not match!");
+            return false;
+          }
+          else if(isNaN(num)){  
+            document.getElementById("numloc").innerHTML="Enter Numeric value only";  
+            return false;  
+        } else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+            alert("Enter a valid e-mail address \n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+            return false;  
+        }
+        else {
+            return true;
+        }  
+
+    }
+    </script>  
+</style>
+</head>
+<body>
+
+<header>
+  
+  <h1  style="font-family:serif"><b>ANOKHA TECHFEST 2023</b></h1> 
+  <p style="font-family:Cursive">Welcome to the biggest event of AMRITA!</p>
+  <p></p>
+</header>
+<form>
+
+<h1 align="center"> <font style= "color: orange; background: linear-gradient(45deg, #f40752, #f9ab8f); border-radius: 13px;" > <h2>Hey Techie!</font></u></h1>
+
+<table border="1" width="40%" height="600px" align="center" bgcolor="floralwhite">
+<!---row1--->
+<tr style="align:center; background: linear-gradient(45deg, #9bf8f4, #6f7bf7);">
+<th colspan="2"><font size="10"><i>Register Here!</i></font></th>
+</tr>
+
+<!---row2--->
+<tr>
+<th><font color="#800080;">
+<label>Name</label></th>
+<th><input type="text"></th>
+</tr>
+
+<tr>
+<th><font color="#800080;"><label>DOB</label></th>
+<th><input type="date"></th>
+</tr>
+
+<tr>
+<th><font color="#800080;">
+<label>College Name</label></th>
+<th><input type="text"></th>
+</tr>
+
+<tr>
+<th><font color="#800080;">
+<label>Course</label></th>
+<th><input type="text"></th>
+</tr>
+
+<tr >
+<th><font color="#800080;">
+<label>Phone</label></th>
+<th><input type="number"></th>
+</tr>
+
+<tr >
+<th><font color="#800080;">
+<label>E-Mail</label></th>
+<th><input type="email"></th>
+</tr>
+
+<tr >
+<th><font color="#800080;">
+<label>Gender</label></th>
+<th><font color="#800080;">
+<input type="radio" name="gender">Male 
+<input type="radio" name="gender">Female
+</th>
+</tr>
+
+<tr >
+<th><font color="#800080;">
+<label>Year</label></th>
+<th>
+<select name="Year">
+<option value="I Year">I Year</option>
+<option value="II Year">II Year</option>
+<option value="III Year">III Year</option>
+<option value="IV Year">IV Year</option>
+</th>
+</tr>
+
+<tr >
+<th><font color="#800080;">
+<label>Password</label></th>
+<th><input type="password"></th>
+</tr>
+
+<tr >
+<th><font color="#800080;">
+<label>Re-enter Password</label></th>
+<th><input type="password"></th>
+</tr>
+
+<tr>
+<th><font color="#800080;">
+<label>Upload your Id</label>
+</th>
+<th>
+<input type="file" id="myFile" name="filename">
+</th>
+</tr>
+<tr >
+<tr>
+<th><font color="#800080;">
+    Choose your interest
+</th>
+<th>
+        <input type="checkbox" id="Event1" name="Event1" value="Technical">
+        <label for="Event1"><font color="#800080;"> Technical</label><br>
+        <input type="checkbox" id="Nontechnical" name="Event2" value="Non-Technical">
+        <label for="Event2"> Non technical</label><br>
+</th>
+</tr>
+<th><font color="#800080;">
+<label>Accomodation</label></th>
+<th height="50px"><div class="toggle-radio">
+    <input class="radio1" type="radio" name="rdo" id="yes" checked>
+    <input class="radio1" type="radio" name="rdo" id="no">
+    <div class="switch">
+        <label for="yes">Yes</label>
+        <label for="no">No</label>
+        <span></span>
+    </div>
+</div></th>
+</tr>
+
+
+
+</table>
+</form>
+<a href="../index.html">
+<button>
+Sumbit
+</button></a>
+
+</body>
+</html>
